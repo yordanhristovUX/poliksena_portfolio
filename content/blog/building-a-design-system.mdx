@@ -1,0 +1,44 @@
+---
+title: Building a Design System with Figma and Tokens
+description: How I structured design tokens from Figma into a maintainable CSS and TypeScript system.
+date: 2024-03-15
+tags: [design-systems, figma, tokens, css]
+coverImage: /images/blog/design-system.jpg
+draft: false
+---
+
+Design systems live or die by their token layer. When tokens are well-structured, every design decision — color, spacing, typography — flows from a single source of truth.
+
+## The problem with hardcoded values
+
+Most codebases start with hardcoded values scattered across components. `#3b82f6` here, `16px` there. Over time, changing a brand color means a grep-and-replace across hundreds of files.
+
+Tokens solve this by naming values semantically:
+
+```css
+--color-brand: #0ea5e9;
+--color-brand-hover: #0284c7;
+```
+
+Now a rebrand is a one-line change in `tokens.json`.
+
+## Primitive vs semantic tokens
+
+The key distinction is **primitive** vs **semantic** tokens:
+
+- **Primitive**: raw values — `neutral-500: #737373`
+- **Semantic**: intent-based aliases — `foreground-muted: {neutral-500}`
+
+Components only ever reference semantic tokens. This means dark mode is just a matter of swapping semantic values under `[data-theme="dark"]`.
+
+## Extracting from Figma
+
+With Figma MCP connected, you can query the design file directly:
+
+> "List all local color styles in file `<FILE_ID>`"
+
+The MCP server returns structured data you can map directly to your token schema.
+
+## Conclusion
+
+The investment in a proper token layer pays off immediately. Every new component is faster to build, every design change is safer to ship.

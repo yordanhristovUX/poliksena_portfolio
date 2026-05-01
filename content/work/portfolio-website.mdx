@@ -1,0 +1,26 @@
+---
+title: Portfolio Website
+description: This site — built with Next.js, Tailwind CSS v4, and a Figma-driven design token system.
+date: 2024-03-01
+tags: [next.js, tailwind, design-systems, figma]
+url: https://yourname.com
+draft: false
+---
+
+## Overview
+
+A portfolio and blog built from scratch with a focus on design system architecture. Tokens are extracted from Figma via MCP and flow through to CSS custom properties and Tailwind utilities.
+
+## Technical decisions
+
+**Token-first architecture** — every visual value originates in `tokens.json`. No hardcoded colors or spacing anywhere in component code.
+
+**Tailwind v4 CSS-first config** — the `@theme` directive maps token CSS variables directly to Tailwind utilities, eliminating the need for a `tailwind.config.js`.
+
+**MDX for content** — blog posts and project write-ups are `.mdx` files in the repo. No CMS dependency, full version control, and the ability to embed React components inline.
+
+**Dark mode via CSS custom properties** — semantic tokens have light and dark values. Switching themes is a single `data-theme` attribute change on `<html>`.
+
+## What I learned
+
+The biggest insight was the value of separating **primitive** tokens (raw palette) from **semantic** tokens (intent-based aliases). Components that only reference semantic tokens are trivially themeable.

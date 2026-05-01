@@ -1,0 +1,24 @@
+---
+title: Figma MCP Token Extraction
+description: Automating design token extraction from Figma using the Model Context Protocol server.
+date: 2024-01-20
+tags: [figma, mcp, automation, tokens]
+draft: false
+---
+
+## Overview
+
+A workflow that connects Figma's design file directly to the codebase via the Figma MCP server. Design tokens — colors, typography, spacing — are queried from Figma Variables and written to `tokens.json` without manual copy-paste.
+
+## How it works
+
+1. The Figma MCP server runs locally, authenticated with a Personal Access Token
+2. The AI assistant queries the Figma file for local styles and Variables
+3. Extracted values are mapped to the W3C Design Token format
+4. `npm run tokens` regenerates `tokens.css` and `tokens.ts`
+
+## Impact
+
+- Token updates that previously took 30 minutes now take under 5
+- No drift between design and code — tokens are always in sync
+- New team members can update tokens without knowing the codebase structure
