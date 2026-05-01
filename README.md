@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# poliksena_portfolio
 
-## Getting Started
+Portfolio and blog built with Next.js 15, a Figma-driven design token system, and MDX content.
 
-First, run the development server:
+## Stack
+
+| Layer         | Tool                                               |
+| ------------- | -------------------------------------------------- |
+| Framework     | Next.js 15 (App Router, static export)             |
+| Language      | TypeScript (strict)                                |
+| Styling       | Tailwind CSS v4 (CSS-first config)                 |
+| Fonts         | Inter, JetBrains Mono, Lora via `next/font/google` |
+| Content       | MDX via `next-mdx-remote/rsc` + `gray-matter`      |
+| Dark mode     | `next-themes` + CSS custom properties              |
+| Linting       | ESLint + Prettier + Husky pre-commit hooks         |
+| Design source | Figma via MCP (`@figma/mcp`)                       |
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+portfolio/
+├── content/
+│   ├── blog/          # Blog posts (.mdx)
+│   └── work/          # Portfolio projects (.mdx)
+├── scripts/
+│   └── build-tokens.mjs   # Generates tokens.css + tokens.ts from tokens.json
+├── src/
+│   ├── app/           # Next.js App Router pages and layouts
+│   ├── design-system/
+│   │   ├── components/    # UI primitives (Button, Card, Tag, Typography…)
+│   │   ├── hooks/         # useMediaQuery, useLocalStorage
+│   │   ├── layouts/       # Header, Footer, PageLayout
+│   │   └── utils/         # cn(), formatDate()
+│   └── lib/
+│       ├── content.ts         # MDX file reader + frontmatter parser
+│       ├── content.types.ts   # Frontmatter TypeScript interfaces
+│       └── mdx-components.tsx # MDX element → styled component map
+└── tokens/
+    ├── tokens.json    # Source of truth (W3C Design Token format)
+    ├── tokens.css     # Generated CSS custom properties
+    └── tokens.ts      # Generated TypeScript constants
+```
 
-## Learn More
+## Design tokens
 
-To learn more about Next.js, take a look at the following resources:
+All visual values — color, typography, spacing, radius, shadow, motion — live in `tokens/tokens.json`. The CSS and TypeScript files are generated from it.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# After editing tokens.json or updating from Figma:
+npm run tokens
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Never edit `tokens.css` or `tokens.ts` directly.
 
-## Deploy on Vercel
+## Content
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Add MDX files to `content/blog/` or `content/work/`. Required frontmatter:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```yaml
+---
+title: Post title
+description: One-line summary
+date: 2024-03-15
+tags: [tag-one, tag-two]
+draft: false
+---
+```
+
+Set `draft: true` to exclude a post from all listings without deleting it.
+
+## Figma MCP
+
+See [FIGMA_SETUP.md](./FIGMA_SETUP.md) for the full workflow to connect Figma and extract design tokens.
+
+Quick start:
+
+1. Add `FIGMA_ACCESS_TOKEN` as an environment secret in Ona
+2. Open `.vscode/mcp.json` — the MCP server starts automatically
+3. Ask the AI: _"List all local color styles in Figma file `<FILE_ID>`"_
+4. Update `tokens/tokens.json` with extracted values
+5. Run `npm run tokens`
+
+## Commands
+
+| Command                | Description                                |
+| ---------------------- | ------------------------------------------ |
+| `npm run dev`          | Start dev server                           |
+| `npm run build`        | Production build                           |
+| `npm run tokens`       | Regenerate token CSS + TS from tokens.json |
+| `npm run type-check`   | TypeScript check (no emit)                 |
+| `npm run lint`         | ESLint                                     |
+| `npm run format`       | Prettier (write)                           |
+| `npm run format:check` | Prettier (check only)                      |
+
+## Deployment
+
+The site is fully static (`generateStaticParams` on all dynamic routes). Deploy to any static host:
+
+- **Vercel**: connect the repo, zero config needed
+- **Netlify**: `npm run build`, publish `out/` (add `output: 'export'` to `next.config.ts` first)
+- **GitHub Pages**: same as Netlify
+
+Set `NEXT_PUBLIC_SITE_URL` to your production domain for correct sitemap and OG URLs.
