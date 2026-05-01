@@ -1,0 +1,46 @@
+---
+title: Dark Mode Without Flash of Unstyled Content
+description: Using next-themes and CSS custom properties to implement FOUC-free dark mode in Next.js.
+date: 2024-02-08
+tags: [dark-mode, next.js, css, ux]
+draft: false
+---
+
+Flash of unstyled content (FOUC) in dark mode happens when the page renders in light mode for a split second before JavaScript applies the dark theme. It's jarring and avoidable.
+
+## Why it happens
+
+Server-rendered HTML has no knowledge of the user's theme preference. The browser renders the default (light) styles, then React hydrates and `next-themes` reads `localStorage` — but by then the user has already seen the flash.
+
+## The fix: inline script in `<head>`
+
+The solution is to apply the theme *before* the browser paints. A tiny inline script in `<head>` reads `localStorage` and sets `data-theme` on `<html>` synchronously:
+
+```html
+<script>
+  (function() {
+    var theme = localStorage.getItem('theme') || 'system';
+    if (theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>
+```
+
+`next-themes` handles this automatically when you set `attribute="data-theme"`.
+
+## CSS custom properties make it instant
+
+Because our semantic tokens are CSS custom properties, the theme switch is a single attribute change on `<html>`. No class toggling, no re-renders — just CSS doing its job.
+
+```css
+:root {
+  --color-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+  --color-bg: #0a0a0a;
+}
+```
+
+The result: zero flash, instant switching, and full SSR compatibility.

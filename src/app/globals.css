@@ -1,0 +1,273 @@
+/* Import design tokens (CSS custom properties) */
+@import '../../tokens/tokens.css';
+
+/* Tailwind v4 base */
+@import 'tailwindcss';
+
+/* =============================================================================
+   Tailwind @theme — maps design tokens to Tailwind utility classes
+   All values reference CSS custom properties from tokens.css.
+   Never add hardcoded values here — update tokens.json and re-run npm run tokens.
+   ============================================================================= */
+
+@theme {
+  /* --- Colors: semantic (what components use) --- */
+  --color-bg: var(--color-semantic-background-default);
+  --color-bg-subtle: var(--color-semantic-background-subtle);
+  --color-bg-muted: var(--color-semantic-background-muted);
+  --color-bg-inverted: var(--color-semantic-background-inverted);
+
+  --color-fg: var(--color-semantic-foreground-default);
+  --color-fg-muted: var(--color-semantic-foreground-muted);
+  --color-fg-subtle: var(--color-semantic-foreground-subtle);
+  --color-fg-inverted: var(--color-semantic-foreground-inverted);
+
+  --color-border: var(--color-semantic-border-default);
+  --color-border-strong: var(--color-semantic-border-strong);
+
+  --color-brand: var(--color-semantic-brand-default);
+  --color-brand-hover: var(--color-semantic-brand-hover);
+  --color-brand-subtle: var(--color-semantic-brand-subtle);
+  --color-brand-fg: var(--color-semantic-brand-foreground);
+
+  /* --- Colors: primitives --- */
+  --color-neutral-0: var(--color-primitive-neutral-0);
+  --color-neutral-50: var(--color-primitive-neutral-50);
+  --color-neutral-100: var(--color-primitive-neutral-100);
+  --color-neutral-200: var(--color-primitive-neutral-200);
+  --color-neutral-300: var(--color-primitive-neutral-300);
+  --color-neutral-400: var(--color-primitive-neutral-400);
+  --color-neutral-500: var(--color-primitive-neutral-500);
+  --color-neutral-600: var(--color-primitive-neutral-600);
+  --color-neutral-700: var(--color-primitive-neutral-700);
+  --color-neutral-800: var(--color-primitive-neutral-800);
+  --color-neutral-900: var(--color-primitive-neutral-900);
+  --color-neutral-950: var(--color-primitive-neutral-950);
+
+  --color-accent: var(--color-semantic-accent-default);
+  --color-accent-fg: var(--color-semantic-accent-foreground);
+
+  --color-success: var(--color-primitive-green-400);
+  --color-warning: var(--color-primitive-yellow-400);
+  --color-error: var(--color-primitive-red-400);
+
+  /* --- Typography --- */
+  /* Variables injected by next/font at runtime */
+  --font-display: var(--font-bricolage, var(--typography-fontFamily-display));
+  --font-body: var(--font-inter, var(--typography-fontFamily-body));
+  --font-label: var(--font-archivo-narrow, var(--typography-fontFamily-label));
+  --font-mono: var(--font-jetbrains-mono, var(--typography-fontFamily-mono));
+
+  --text-xs: var(--typography-fontSize-xs);
+  --text-sm: var(--typography-fontSize-sm);
+  --text-base: var(--typography-fontSize-base);
+  --text-lg: var(--typography-fontSize-lg);
+  --text-xl: var(--typography-fontSize-xl);
+  --text-2xl: var(--typography-fontSize-2xl);
+  --text-3xl: var(--typography-fontSize-3xl);
+  --text-4xl: var(--typography-fontSize-4xl);
+  --text-5xl: var(--typography-fontSize-5xl);
+  --text-6xl: var(--typography-fontSize-6xl);
+
+  /* --- Border radius --- */
+  --radius-none: var(--borderRadius-none);
+  --radius-sm: var(--borderRadius-sm);
+  --radius: var(--borderRadius-base);
+  --radius-md: var(--borderRadius-md);
+  --radius-lg: var(--borderRadius-lg);
+  --radius-xl: var(--borderRadius-xl);
+  --radius-2xl: var(--borderRadius-2xl);
+  --radius-3xl: var(--borderRadius-3xl);
+  --radius-full: var(--borderRadius-full);
+
+  /* --- Shadows --- */
+  --shadow-sm: var(--shadow-sm);
+  --shadow: var(--shadow-base);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+
+  /* --- Motion --- */
+  --duration-fast: var(--motion-duration-fast);
+  --duration-normal: var(--motion-duration-normal);
+  --duration-slow: var(--motion-duration-slow);
+  --ease-spring: var(--motion-easing-spring);
+}
+
+/* =============================================================================
+   Base styles
+   ============================================================================= */
+
+html {
+  font-family: var(--font-body);
+  background-color: var(--color-semantic-background-default);
+  color: var(--color-semantic-foreground-default);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-semantic-brand-default);
+  outline-offset: 2px;
+  border-radius: var(--borderRadius-sm);
+}
+
+::selection {
+  background-color: var(--color-semantic-brand-subtle);
+  color: var(--color-semantic-foreground-default);
+}
+
+/* =============================================================================
+   Prose — token-based typography for MDX content
+   Applied via the .prose-tokens class on the <Prose> component.
+   ============================================================================= */
+
+.prose-tokens {
+  color: var(--color-semantic-foreground-default);
+  max-width: 65ch;
+}
+
+.prose-tokens h1,
+.prose-tokens h2,
+.prose-tokens h3,
+.prose-tokens h4 {
+  color: var(--color-semantic-foreground-default);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+}
+
+.prose-tokens h1 {
+  font-size: var(--typography-fontSize-4xl);
+}
+.prose-tokens h2 {
+  font-size: var(--typography-fontSize-3xl);
+}
+.prose-tokens h3 {
+  font-size: var(--typography-fontSize-2xl);
+}
+.prose-tokens h4 {
+  font-size: var(--typography-fontSize-xl);
+}
+
+.prose-tokens p {
+  font-size: var(--typography-fontSize-base);
+  line-height: 1.75;
+  margin-bottom: 1.25em;
+  color: var(--color-semantic-foreground-default);
+}
+
+.prose-tokens a {
+  color: var(--color-semantic-brand-default);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--motion-duration-fast);
+}
+
+.prose-tokens a:hover {
+  color: var(--color-semantic-brand-hover);
+}
+
+.prose-tokens strong {
+  font-weight: 600;
+  color: var(--color-semantic-foreground-default);
+}
+
+.prose-tokens em {
+  font-style: italic;
+}
+
+.prose-tokens code {
+  font-family: var(--typography-fontFamily-mono);
+  font-size: 0.875em;
+  background-color: var(--color-semantic-background-muted);
+  color: var(--color-semantic-foreground-default);
+  padding: 0.2em 0.4em;
+  border-radius: var(--borderRadius-sm);
+  border: 1px solid var(--color-semantic-border-default);
+}
+
+.prose-tokens pre {
+  background-color: var(--color-semantic-background-inverted);
+  color: var(--color-semantic-foreground-inverted);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--borderRadius-lg);
+  overflow-x: auto;
+  margin-bottom: 1.5em;
+  font-size: var(--typography-fontSize-sm);
+  line-height: 1.7;
+}
+
+.prose-tokens pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+}
+
+.prose-tokens blockquote {
+  border-left: 3px solid var(--color-semantic-brand-default);
+  padding-left: 1.25rem;
+  margin-left: 0;
+  color: var(--color-semantic-foreground-muted);
+  font-style: italic;
+}
+
+.prose-tokens ul,
+.prose-tokens ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25em;
+}
+
+.prose-tokens li {
+  margin-bottom: 0.375em;
+  line-height: 1.75;
+}
+
+.prose-tokens ul li {
+  list-style-type: disc;
+}
+.prose-tokens ol li {
+  list-style-type: decimal;
+}
+
+.prose-tokens hr {
+  border: none;
+  border-top: 1px solid var(--color-semantic-border-default);
+  margin: 2.5em 0;
+}
+
+.prose-tokens img {
+  border-radius: var(--borderRadius-lg);
+  max-width: 100%;
+  height: auto;
+}
+
+.prose-tokens table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--typography-fontSize-sm);
+  margin-bottom: 1.5em;
+}
+
+.prose-tokens th {
+  text-align: left;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 2px solid var(--color-semantic-border-strong);
+}
+
+.prose-tokens td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--color-semantic-border-default);
+}
