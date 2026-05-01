@@ -9,21 +9,21 @@ interface NavLinkProps {
   href: string;
   children: ReactNode;
   className?: string;
-  /** Exact match required for active state (default: false) */
   exact?: boolean;
 }
 
 export function NavLink({ href, children, className, exact = false }: NavLinkProps) {
   const pathname = usePathname();
-  const isActive = exact ? pathname === href : pathname.startsWith(href);
+  const isActive = exact ? pathname === href : pathname.startsWith(href) && href !== '/';
 
   return (
     <Link
       href={href}
       className={cn(
-        'text-sm font-medium transition-colors duration-fast',
-        'px-3 py-1.5 rounded-radius-md',
-        isActive ? 'text-fg bg-bg-muted' : 'text-fg-muted hover:text-fg hover:bg-bg-muted',
+        'inline-flex h-10 items-center rounded-full px-4',
+        'font-label text-sm font-medium tracking-wide',
+        'transition-colors duration-fast',
+        isActive ? 'bg-fg text-bg' : 'text-fg-muted hover:text-fg hover:bg-fg/10',
         className,
       )}
       aria-current={isActive ? 'page' : undefined}

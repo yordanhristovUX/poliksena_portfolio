@@ -33,16 +33,16 @@
   --color-primitive-red-500: #c71826;
   --color-primitive-green-400: #18a24a;
   --color-primitive-green-500: #157937;
-  --color-semantic-background-default: #f5f5f0;
-  --color-semantic-background-subtle: #f7f7f6;
-  --color-semantic-background-muted: #f6f6f5;
-  --color-semantic-background-inverted: #141414;
-  --color-semantic-foreground-default: #141414;
-  --color-semantic-foreground-muted: #5e6459;
+  --color-semantic-background-default: #000000;
+  --color-semantic-background-subtle: #141414;
+  --color-semantic-background-muted: #2c2c2c;
+  --color-semantic-background-inverted: #ffffff;
+  --color-semantic-foreground-default: #ffffff;
+  --color-semantic-foreground-muted: #999999;
   --color-semantic-foreground-subtle: #959595;
-  --color-semantic-foreground-inverted: #ffffff;
-  --color-semantic-border-default: #ccd1c7;
-  --color-semantic-border-strong: #afb4aa;
+  --color-semantic-foreground-inverted: #000000;
+  --color-semantic-border-default: #2c2c2c;
+  --color-semantic-border-strong: #404540;
   --color-semantic-brand-default: #1ce3af;
   --color-semantic-brand-hover: #3cc8c8;
   --color-semantic-brand-subtle: #e6fdf8;
@@ -127,16 +127,16 @@
 }
 
 [data-theme="dark"] {
-  --color-semantic-background-default: #141414;
-  --color-semantic-background-subtle: #1f1b1b;
-  --color-semantic-background-muted: #2b2e2b;
-  --color-semantic-background-inverted: #f5f5f0;
-  --color-semantic-foreground-default: #f7f7f6;
-  --color-semantic-foreground-muted: #999999;
+  --color-semantic-background-default: #f5f5f0;
+  --color-semantic-background-subtle: #f7f7f6;
+  --color-semantic-background-muted: #f6f6f5;
+  --color-semantic-background-inverted: #141414;
+  --color-semantic-foreground-default: #141414;
+  --color-semantic-foreground-muted: #5e6459;
   --color-semantic-foreground-subtle: #959595;
-  --color-semantic-foreground-inverted: #141414;
-  --color-semantic-border-default: #2c2c2c;
-  --color-semantic-border-strong: #404540;
+  --color-semantic-foreground-inverted: #ffffff;
+  --color-semantic-border-default: #ccd1c7;
+  --color-semantic-border-strong: #afb4aa;
   --color-semantic-brand-default: #1ce3af;
   --color-semantic-brand-hover: #3cc8c8;
   --color-semantic-brand-subtle: #0a2e28;

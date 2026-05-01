@@ -4,15 +4,14 @@ import { cn } from '@/design-system/utils/cn';
 interface PageLayoutProps {
   children: ReactNode;
   className?: string;
-  /** Constrain content width and add horizontal padding */
+  /**
+   * When true, constrains content to max-w-5xl with standard padding.
+   * Set to false for full-bleed pages that manage their own layout.
+   */
   contained?: boolean;
 }
 
-/**
- * Standard page content wrapper.
- * Sits between Header and Footer in the root layout.
- */
-export function PageLayout({ children, className, contained = true }: PageLayoutProps) {
+export function PageLayout({ children, className, contained = false }: PageLayoutProps) {
   return (
     <main className={cn('flex-1', contained && 'mx-auto w-full max-w-5xl px-6 py-16', className)}>
       {children}
