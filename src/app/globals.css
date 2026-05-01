@@ -44,15 +44,19 @@
   --color-neutral-900: var(--color-primitive-neutral-900);
   --color-neutral-950: var(--color-primitive-neutral-950);
 
-  --color-success: var(--color-primitive-success-500);
-  --color-warning: var(--color-primitive-warning-500);
-  --color-error: var(--color-primitive-error-500);
+  --color-accent: var(--color-semantic-accent-default);
+  --color-accent-fg: var(--color-semantic-accent-foreground);
+
+  --color-success: var(--color-primitive-green-400);
+  --color-warning: var(--color-primitive-yellow-400);
+  --color-error: var(--color-primitive-red-400);
 
   /* --- Typography --- */
-  /* --font-inter, --font-jetbrains-mono, --font-lora are injected by next/font */
-  --font-sans: var(--font-inter, var(--typography-fontFamily-sans));
+  /* Variables injected by next/font at runtime */
+  --font-display: var(--font-bricolage, var(--typography-fontFamily-display));
+  --font-body: var(--font-inter, var(--typography-fontFamily-body));
+  --font-label: var(--font-archivo-narrow, var(--typography-fontFamily-label));
   --font-mono: var(--font-jetbrains-mono, var(--typography-fontFamily-mono));
-  --font-serif: var(--font-lora, var(--typography-fontFamily-serif));
 
   --text-xs: var(--typography-fontSize-xs);
   --text-sm: var(--typography-fontSize-sm);
@@ -95,7 +99,7 @@
    ============================================================================= */
 
 html {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   background-color: var(--color-semantic-background-default);
   color: var(--color-semantic-foreground-default);
   -webkit-font-smoothing: antialiased;

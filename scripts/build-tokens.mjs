@@ -139,7 +139,7 @@ function toTsKey(parts) {
 const tsEntries = lightTokens.map(({ path, value, description }) => {
   const key = toTsKey(path);
   const varName = toCssVar(path);
-  const resolved = resolveValue(value);
+  const resolved = String(resolveValue(value)).replace(/'/g, "\\'");
   const comment = description ? `  /** ${description} */\n` : '';
   return `${comment}  ${key}: { cssVar: '${varName}', value: '${resolved}' },`;
 });

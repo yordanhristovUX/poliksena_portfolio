@@ -5,97 +5,102 @@
    ============================================================================= */
 
 export const tokens = {
-  /** Pure white */
   colorPrimitiveNeutral0: { cssVar: '--color-primitive-neutral-0', value: '#ffffff' },
-  colorPrimitiveNeutral50: { cssVar: '--color-primitive-neutral-50', value: '#fafafa' },
-  colorPrimitiveNeutral100: { cssVar: '--color-primitive-neutral-100', value: '#f5f5f5' },
-  colorPrimitiveNeutral200: { cssVar: '--color-primitive-neutral-200', value: '#e5e5e5' },
-  colorPrimitiveNeutral300: { cssVar: '--color-primitive-neutral-300', value: '#d4d4d4' },
-  colorPrimitiveNeutral400: { cssVar: '--color-primitive-neutral-400', value: '#a3a3a3' },
-  colorPrimitiveNeutral500: { cssVar: '--color-primitive-neutral-500', value: '#737373' },
-  colorPrimitiveNeutral600: { cssVar: '--color-primitive-neutral-600', value: '#525252' },
-  colorPrimitiveNeutral700: { cssVar: '--color-primitive-neutral-700', value: '#404040' },
-  colorPrimitiveNeutral800: { cssVar: '--color-primitive-neutral-800', value: '#262626' },
-  colorPrimitiveNeutral900: { cssVar: '--color-primitive-neutral-900', value: '#171717' },
-  colorPrimitiveNeutral950: { cssVar: '--color-primitive-neutral-950', value: '#0a0a0a' },
-  /** Pure black */
+  /** Lightest background surface */
+  colorPrimitiveNeutral50: { cssVar: '--color-primitive-neutral-50', value: '#f7f7f6' },
+  /** Off-white page background */
+  colorPrimitiveNeutral100: { cssVar: '--color-primitive-neutral-100', value: '#f5f5f0' },
+  colorPrimitiveNeutral150: { cssVar: '--color-primitive-neutral-150', value: '#f6f6f5' },
+  /** Subtle border / divider */
+  colorPrimitiveNeutral200: { cssVar: '--color-primitive-neutral-200', value: '#ccd1c7' },
+  /** Muted border */
+  colorPrimitiveNeutral300: { cssVar: '--color-primitive-neutral-300', value: '#afb4aa' },
+  /** Placeholder / disabled text */
+  colorPrimitiveNeutral400: { cssVar: '--color-primitive-neutral-400', value: '#999999' },
+  /** Secondary text */
+  colorPrimitiveNeutral500: { cssVar: '--color-primitive-neutral-500', value: '#959595' },
+  /** Muted foreground */
+  colorPrimitiveNeutral600: { cssVar: '--color-primitive-neutral-600', value: '#5e6459' },
+  /** Medium dark surface */
+  colorPrimitiveNeutral700: { cssVar: '--color-primitive-neutral-700', value: '#404540' },
+  /** Dark surface */
+  colorPrimitiveNeutral800: { cssVar: '--color-primitive-neutral-800', value: '#2c2c2c' },
+  /** Dark surface variant */
+  colorPrimitiveNeutral850: { cssVar: '--color-primitive-neutral-850', value: '#2b2e2b' },
+  /** Near-black surface */
+  colorPrimitiveNeutral900: { cssVar: '--color-primitive-neutral-900', value: '#1f1b1b' },
+  /** Primary foreground */
+  colorPrimitiveNeutral950: { cssVar: '--color-primitive-neutral-950', value: '#141414' },
   colorPrimitiveNeutral1000: { cssVar: '--color-primitive-neutral-1000', value: '#000000' },
-  colorPrimitiveBrand50: { cssVar: '--color-primitive-brand-50', value: '#f0f9ff' },
-  colorPrimitiveBrand100: { cssVar: '--color-primitive-brand-100', value: '#e0f2fe' },
-  colorPrimitiveBrand200: { cssVar: '--color-primitive-brand-200', value: '#bae6fd' },
-  colorPrimitiveBrand300: { cssVar: '--color-primitive-brand-300', value: '#7dd3fc' },
-  colorPrimitiveBrand400: { cssVar: '--color-primitive-brand-400', value: '#38bdf8' },
-  colorPrimitiveBrand500: { cssVar: '--color-primitive-brand-500', value: '#0ea5e9' },
-  colorPrimitiveBrand600: { cssVar: '--color-primitive-brand-600', value: '#0284c7' },
-  colorPrimitiveBrand700: { cssVar: '--color-primitive-brand-700', value: '#0369a1' },
-  colorPrimitiveBrand800: { cssVar: '--color-primitive-brand-800', value: '#075985' },
-  colorPrimitiveBrand900: { cssVar: '--color-primitive-brand-900', value: '#0c4a6e' },
-  colorPrimitiveSuccess500: { cssVar: '--color-primitive-success-500', value: '#22c55e' },
-  colorPrimitiveSuccess700: { cssVar: '--color-primitive-success-700', value: '#15803d' },
-  colorPrimitiveWarning500: { cssVar: '--color-primitive-warning-500', value: '#f59e0b' },
-  colorPrimitiveWarning700: { cssVar: '--color-primitive-warning-700', value: '#b45309' },
-  colorPrimitiveError500: { cssVar: '--color-primitive-error-500', value: '#ef4444' },
-  colorPrimitiveError700: { cssVar: '--color-primitive-error-700', value: '#b91c1c' },
-  /** Page background */
-  colorSemanticBackgroundDefault: { cssVar: '--color-semantic-background-default', value: '#ffffff' },
-  /** Subtle surface (cards, sidebars) */
-  colorSemanticBackgroundSubtle: { cssVar: '--color-semantic-background-subtle', value: '#fafafa' },
-  /** Muted surface (code blocks, tags) */
-  colorSemanticBackgroundMuted: { cssVar: '--color-semantic-background-muted', value: '#f5f5f5' },
-  /** Inverted surface */
-  colorSemanticBackgroundInverted: { cssVar: '--color-semantic-background-inverted', value: '#171717' },
-  /** Primary text */
-  colorSemanticForegroundDefault: { cssVar: '--color-semantic-foreground-default', value: '#171717' },
-  /** Secondary/muted text */
-  colorSemanticForegroundMuted: { cssVar: '--color-semantic-foreground-muted', value: '#737373' },
-  /** Placeholder, disabled */
-  colorSemanticForegroundSubtle: { cssVar: '--color-semantic-foreground-subtle', value: '#a3a3a3' },
-  /** Text on dark surfaces */
+  /** Teal mid */
+  colorPrimitiveTeal300: { cssVar: '--color-primitive-teal-300', value: '#3cc8c8' },
+  /** Brand teal — primary accent */
+  colorPrimitiveTeal400: { cssVar: '--color-primitive-teal-400', value: '#1ce3af' },
+  /** Secondary accent */
+  colorPrimitivePurple400: { cssVar: '--color-primitive-purple-400', value: '#9747ff' },
+  colorPrimitivePurple500: { cssVar: '--color-primitive-purple-500', value: '#6e0070' },
+  colorPrimitivePurple600: { cssVar: '--color-primitive-purple-600', value: '#4b004f' },
+  /** Highlight */
+  colorPrimitiveYellow400: { cssVar: '--color-primitive-yellow-400', value: '#fad91f' },
+  colorPrimitiveYellow500: { cssVar: '--color-primitive-yellow-500', value: '#fff200' },
+  colorPrimitiveOrange400: { cssVar: '--color-primitive-orange-400', value: '#ff8a00' },
+  colorPrimitiveOrange500: { cssVar: '--color-primitive-orange-500', value: '#da720e' },
+  colorPrimitiveRed400: { cssVar: '--color-primitive-red-400', value: '#f04654' },
+  colorPrimitiveRed500: { cssVar: '--color-primitive-red-500', value: '#c71826' },
+  colorPrimitiveGreen400: { cssVar: '--color-primitive-green-400', value: '#18a24a' },
+  colorPrimitiveGreen500: { cssVar: '--color-primitive-green-500', value: '#157937' },
+  colorSemanticBackgroundDefault: { cssVar: '--color-semantic-background-default', value: '#f5f5f0' },
+  colorSemanticBackgroundSubtle: { cssVar: '--color-semantic-background-subtle', value: '#f7f7f6' },
+  colorSemanticBackgroundMuted: { cssVar: '--color-semantic-background-muted', value: '#f6f6f5' },
+  colorSemanticBackgroundInverted: { cssVar: '--color-semantic-background-inverted', value: '#141414' },
+  colorSemanticForegroundDefault: { cssVar: '--color-semantic-foreground-default', value: '#141414' },
+  colorSemanticForegroundMuted: { cssVar: '--color-semantic-foreground-muted', value: '#5e6459' },
+  colorSemanticForegroundSubtle: { cssVar: '--color-semantic-foreground-subtle', value: '#959595' },
   colorSemanticForegroundInverted: { cssVar: '--color-semantic-foreground-inverted', value: '#ffffff' },
-  colorSemanticBorderDefault: { cssVar: '--color-semantic-border-default', value: '#e5e5e5' },
-  colorSemanticBorderStrong: { cssVar: '--color-semantic-border-strong', value: '#d4d4d4' },
-  colorSemanticBrandDefault: { cssVar: '--color-semantic-brand-default', value: '#0ea5e9' },
-  colorSemanticBrandHover: { cssVar: '--color-semantic-brand-hover', value: '#0284c7' },
-  colorSemanticBrandSubtle: { cssVar: '--color-semantic-brand-subtle', value: '#f0f9ff' },
-  colorSemanticBrandForeground: { cssVar: '--color-semantic-brand-foreground', value: '#ffffff' },
-  typographyFontFamilySans: { cssVar: '--typography-fontFamily-sans', value: 'Inter, ui-sans-serif, system-ui, sans-serif' },
-  typographyFontFamilyMono: { cssVar: '--typography-fontFamily-mono', value: 'JetBrains Mono, ui-monospace, monospace' },
-  typographyFontFamilySerif: { cssVar: '--typography-fontFamily-serif', value: 'Lora, ui-serif, Georgia, serif' },
+  colorSemanticBorderDefault: { cssVar: '--color-semantic-border-default', value: '#ccd1c7' },
+  colorSemanticBorderStrong: { cssVar: '--color-semantic-border-strong', value: '#afb4aa' },
+  colorSemanticBrandDefault: { cssVar: '--color-semantic-brand-default', value: '#1ce3af' },
+  colorSemanticBrandHover: { cssVar: '--color-semantic-brand-hover', value: '#3cc8c8' },
+  colorSemanticBrandSubtle: { cssVar: '--color-semantic-brand-subtle', value: '#e6fdf8' },
+  colorSemanticBrandForeground: { cssVar: '--color-semantic-brand-foreground', value: '#141414' },
+  colorSemanticAccentDefault: { cssVar: '--color-semantic-accent-default', value: '#9747ff' },
+  colorSemanticAccentForeground: { cssVar: '--color-semantic-accent-foreground', value: '#ffffff' },
+  typographyFontFamilyDisplay: { cssVar: '--typography-fontFamily-display', value: '\'Bricolage Grotesque\', ui-sans-serif, sans-serif' },
+  typographyFontFamilyBody: { cssVar: '--typography-fontFamily-body', value: 'Inter, ui-sans-serif, system-ui, sans-serif' },
+  typographyFontFamilyLabel: { cssVar: '--typography-fontFamily-label', value: '\'Archivo Narrow\', ui-sans-serif, sans-serif' },
+  typographyFontFamilyMono: { cssVar: '--typography-fontFamily-mono', value: '\'JetBrains Mono\', ui-monospace, monospace' },
   /** 12px */
   typographyFontSizeXs: { cssVar: '--typography-fontSize-xs', value: '0.75rem' },
   /** 14px */
   typographyFontSizeSm: { cssVar: '--typography-fontSize-sm', value: '0.875rem' },
   /** 16px */
   typographyFontSizeBase: { cssVar: '--typography-fontSize-base', value: '1rem' },
-  /** 18px */
-  typographyFontSizeLg: { cssVar: '--typography-fontSize-lg', value: '1.125rem' },
-  /** 20px */
-  typographyFontSizeXl: { cssVar: '--typography-fontSize-xl', value: '1.25rem' },
   /** 24px */
-  typographyFontSize2xl: { cssVar: '--typography-fontSize-2xl', value: '1.5rem' },
-  /** 30px */
-  typographyFontSize3xl: { cssVar: '--typography-fontSize-3xl', value: '1.875rem' },
-  /** 36px */
-  typographyFontSize4xl: { cssVar: '--typography-fontSize-4xl', value: '2.25rem' },
-  /** 48px */
-  typographyFontSize5xl: { cssVar: '--typography-fontSize-5xl', value: '3rem' },
-  /** 60px */
-  typographyFontSize6xl: { cssVar: '--typography-fontSize-6xl', value: '3.75rem' },
+  typographyFontSizeLg: { cssVar: '--typography-fontSize-lg', value: '1.5rem' },
+  /** 40px */
+  typographyFontSizeXl: { cssVar: '--typography-fontSize-xl', value: '2.5rem' },
+  /** 56px */
+  typographyFontSize2xl: { cssVar: '--typography-fontSize-2xl', value: '3.5rem' },
+  /** 64px */
+  typographyFontSize3xl: { cssVar: '--typography-fontSize-3xl', value: '4rem' },
+  /** 120px */
+  typographyFontSize4xl: { cssVar: '--typography-fontSize-4xl', value: '7.5rem' },
+  /** 180px */
+  typographyFontSize5xl: { cssVar: '--typography-fontSize-5xl', value: '11.25rem' },
   typographyFontWeightRegular: { cssVar: '--typography-fontWeight-regular', value: '400' },
   typographyFontWeightMedium: { cssVar: '--typography-fontWeight-medium', value: '500' },
   typographyFontWeightSemibold: { cssVar: '--typography-fontWeight-semibold', value: '600' },
-  typographyFontWeightBold: { cssVar: '--typography-fontWeight-bold', value: '700' },
-  typographyLineHeightTight: { cssVar: '--typography-lineHeight-tight', value: '1.25' },
-  typographyLineHeightSnug: { cssVar: '--typography-lineHeight-snug', value: '1.375' },
+  typographyFontWeightExtrabold: { cssVar: '--typography-fontWeight-extrabold', value: '800' },
+  typographyLineHeightNone: { cssVar: '--typography-lineHeight-none', value: '1' },
+  typographyLineHeightTight: { cssVar: '--typography-lineHeight-tight', value: '1.1' },
+  typographyLineHeightSnug: { cssVar: '--typography-lineHeight-snug', value: '1.2' },
   typographyLineHeightNormal: { cssVar: '--typography-lineHeight-normal', value: '1.5' },
   typographyLineHeightRelaxed: { cssVar: '--typography-lineHeight-relaxed', value: '1.625' },
-  typographyLineHeightLoose: { cssVar: '--typography-lineHeight-loose', value: '2' },
-  typographyLetterSpacingTight: { cssVar: '--typography-letterSpacing-tight', value: '-0.05em' },
-  typographyLetterSpacingSnug: { cssVar: '--typography-letterSpacing-snug', value: '-0.025em' },
+  typographyLetterSpacingTighter: { cssVar: '--typography-letterSpacing-tighter', value: '-0.01em' },
+  typographyLetterSpacingTight: { cssVar: '--typography-letterSpacing-tight', value: '-0.005em' },
   typographyLetterSpacingNormal: { cssVar: '--typography-letterSpacing-normal', value: '0em' },
-  typographyLetterSpacingWide: { cssVar: '--typography-letterSpacing-wide', value: '0.025em' },
-  typographyLetterSpacingWider: { cssVar: '--typography-letterSpacing-wider', value: '0.05em' },
-  typographyLetterSpacingWidest: { cssVar: '--typography-letterSpacing-widest', value: '0.1em' },
+  typographyLetterSpacingWide: { cssVar: '--typography-letterSpacing-wide', value: '0.04em' },
+  typographyLetterSpacingWider: { cssVar: '--typography-letterSpacing-wider', value: '0.06em' },
   spacing0: { cssVar: '--spacing-0', value: '0px' },
   /** 4px */
   spacing1: { cssVar: '--spacing-1', value: '0.25rem' },
@@ -109,63 +114,50 @@ export const tokens = {
   spacing5: { cssVar: '--spacing-5', value: '1.25rem' },
   /** 24px */
   spacing6: { cssVar: '--spacing-6', value: '1.5rem' },
-  /** 28px */
-  spacing7: { cssVar: '--spacing-7', value: '1.75rem' },
   /** 32px */
   spacing8: { cssVar: '--spacing-8', value: '2rem' },
-  /** 36px */
-  spacing9: { cssVar: '--spacing-9', value: '2.25rem' },
   /** 40px */
   spacing10: { cssVar: '--spacing-10', value: '2.5rem' },
   /** 48px */
   spacing12: { cssVar: '--spacing-12', value: '3rem' },
-  /** 56px */
-  spacing14: { cssVar: '--spacing-14', value: '3.5rem' },
+  /** 60px */
+  spacing15: { cssVar: '--spacing-15', value: '3.75rem' },
   /** 64px */
   spacing16: { cssVar: '--spacing-16', value: '4rem' },
   /** 80px */
   spacing20: { cssVar: '--spacing-20', value: '5rem' },
-  /** 96px */
-  spacing24: { cssVar: '--spacing-24', value: '6rem' },
-  /** 112px */
-  spacing28: { cssVar: '--spacing-28', value: '7rem' },
-  /** 128px */
-  spacing32: { cssVar: '--spacing-32', value: '8rem' },
+  /** 120px */
+  spacing30: { cssVar: '--spacing-30', value: '7.5rem' },
+  /** 180px */
+  spacing45: { cssVar: '--spacing-45', value: '11.25rem' },
   spacingPx: { cssVar: '--spacing-px', value: '1px' },
-  /** 2px */
-  spacing0_5: { cssVar: '--spacing-0-5', value: '0.125rem' },
   /** 6px */
   spacing1_5: { cssVar: '--spacing-1-5', value: '0.375rem' },
   /** 10px */
   spacing2_5: { cssVar: '--spacing-2-5', value: '0.625rem' },
-  /** 14px */
-  spacing3_5: { cssVar: '--spacing-3-5', value: '0.875rem' },
   borderRadiusNone: { cssVar: '--borderRadius-none', value: '0px' },
   /** 2px */
-  borderRadiusSm: { cssVar: '--borderRadius-sm', value: '0.125rem' },
-  /** 4px */
-  borderRadiusBase: { cssVar: '--borderRadius-base', value: '0.25rem' },
-  /** 6px */
-  borderRadiusMd: { cssVar: '--borderRadius-md', value: '0.375rem' },
-  /** 8px */
-  borderRadiusLg: { cssVar: '--borderRadius-lg', value: '0.5rem' },
-  /** 12px */
-  borderRadiusXl: { cssVar: '--borderRadius-xl', value: '0.75rem' },
-  /** 16px */
-  borderRadius2xl: { cssVar: '--borderRadius-2xl', value: '1rem' },
-  /** 24px */
-  borderRadius3xl: { cssVar: '--borderRadius-3xl', value: '1.5rem' },
-  borderRadiusFull: { cssVar: '--borderRadius-full', value: '9999px' },
+  borderRadiusXs: { cssVar: '--borderRadius-xs', value: '0.125rem' },
+  /** 6px — tags, chips */
+  borderRadiusSm: { cssVar: '--borderRadius-sm', value: '0.375rem' },
+  /** 13px — cards */
+  borderRadiusMd: { cssVar: '--borderRadius-md', value: '0.8125rem' },
+  /** 16px — panels */
+  borderRadiusLg: { cssVar: '--borderRadius-lg', value: '1rem' },
+  /** 32px — large cards */
+  borderRadiusXl: { cssVar: '--borderRadius-xl', value: '2rem' },
+  /** Pills, avatars */
+  borderRadiusFull: { cssVar: '--borderRadius-full', value: '999px' },
   shadowNone: { cssVar: '--shadow-none', value: 'none' },
-  shadowSm: { cssVar: '--shadow-sm', value: '0 1px 2px 0 rgb(0 0 0 / 0.05)' },
-  shadowBase: { cssVar: '--shadow-base', value: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)' },
-  shadowMd: { cssVar: '--shadow-md', value: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)' },
-  shadowLg: { cssVar: '--shadow-lg', value: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)' },
-  shadowXl: { cssVar: '--shadow-xl', value: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)' },
+  shadowSm: { cssVar: '--shadow-sm', value: '0 1px 2px 0 rgb(20 20 20 / 0.06)' },
+  shadowBase: { cssVar: '--shadow-base', value: '0 2px 8px 0 rgb(20 20 20 / 0.08), 0 1px 2px 0 rgb(20 20 20 / 0.04)' },
+  shadowMd: { cssVar: '--shadow-md', value: '0 4px 16px 0 rgb(20 20 20 / 0.10), 0 2px 4px 0 rgb(20 20 20 / 0.06)' },
+  shadowLg: { cssVar: '--shadow-lg', value: '0 8px 32px 0 rgb(20 20 20 / 0.12), 0 4px 8px 0 rgb(20 20 20 / 0.06)' },
+  shadowXl: { cssVar: '--shadow-xl', value: '0 16px 48px 0 rgb(20 20 20 / 0.14), 0 8px 16px 0 rgb(20 20 20 / 0.08)' },
   motionDurationInstant: { cssVar: '--motion-duration-instant', value: '0ms' },
   motionDurationFast: { cssVar: '--motion-duration-fast', value: '100ms' },
   motionDurationNormal: { cssVar: '--motion-duration-normal', value: '200ms' },
-  motionDurationSlow: { cssVar: '--motion-duration-slow', value: '300ms' },
+  motionDurationSlow: { cssVar: '--motion-duration-slow', value: '350ms' },
   motionDurationSlower: { cssVar: '--motion-duration-slower', value: '500ms' },
   motionEasingLinear: { cssVar: '--motion-easing-linear', value: 'cubic-bezier(0, 0, 1, 1)' },
   motionEasingEase: { cssVar: '--motion-easing-ease', value: 'cubic-bezier(0.25, 0.1, 0.25, 1)' },

@@ -1,14 +1,24 @@
 import type { Metadata } from 'next';
-import { Inter, JetBrains_Mono, Lora } from 'next/font/google';
+import { Bricolage_Grotesque, Inter, Archivo_Narrow, JetBrains_Mono } from 'next/font/google';
 import { ThemeProvider } from '@/design-system/components/ThemeProvider';
 import { Header } from '@/design-system/layouts/Header';
 import { Footer } from '@/design-system/layouts/Footer';
 import './globals.css';
 
 // ---------------------------------------------------------------------------
-// Fonts — loaded via next/font, injected as CSS variables
-// Font families match tokens.json typography.fontFamily values
+// Fonts — match tokens.json typography.fontFamily values
+// Bricolage Grotesque: display/headings
+// Inter: body copy and UI
+// Archivo Narrow: labels, tags, captions
+// JetBrains Mono: code
 // ---------------------------------------------------------------------------
+
+const bricolageGrotesque = Bricolage_Grotesque({
+  subsets: ['latin'],
+  variable: '--font-bricolage',
+  display: 'swap',
+  weight: ['400', '500', '600', '800'],
+});
 
 const inter = Inter({
   subsets: ['latin'],
@@ -16,15 +26,16 @@ const inter = Inter({
   display: 'swap',
 });
 
+const archivoNarrow = Archivo_Narrow({
+  subsets: ['latin'],
+  variable: '--font-archivo-narrow',
+  display: 'swap',
+  weight: ['400', '500', '600'],
+});
+
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-jetbrains-mono',
-  display: 'swap',
-});
-
-const lora = Lora({
-  subsets: ['latin'],
-  variable: '--font-lora',
   display: 'swap',
 });
 
@@ -34,10 +45,10 @@ const lora = Lora({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Your Name — Portfolio',
-    template: '%s | Your Name',
+    default: 'Poliksena Christova — Portfolio',
+    template: '%s | Poliksena Christova',
   },
-  description: 'Designer and developer. Building things on the web.',
+  description: 'UI designer and fine artist. Portfolio 2026.',
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -58,7 +69,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       lang="en"
       // Suppress hydration warning — next-themes sets data-theme after mount
       suppressHydrationWarning
-      className={`${inter.variable} ${jetbrainsMono.variable} ${lora.variable}`}
+      className={`${bricolageGrotesque.variable} ${inter.variable} ${archivoNarrow.variable} ${jetbrainsMono.variable}`}
     >
       <body className="min-h-screen flex flex-col bg-bg text-fg antialiased">
         <ThemeProvider>
